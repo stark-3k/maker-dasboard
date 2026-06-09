@@ -6,6 +6,7 @@ Installation packages for running Maker Dashboard on Bitcoin node platforms.
 | ----------------- | ------------------- | ----- |
 | [Umbrel](umbrel/) | `packaging/umbrel/` | 3010  |
 | [myNode](mynode/) | `packaging/mynode/` | 14200 |
+| [macOS](macos/)   | `packaging/macos/`  | 3000  |
 
 For manual installation without a node platform, see the [Docker setup](#docker) or [bare-metal setup](#bare-metal) below.
 
