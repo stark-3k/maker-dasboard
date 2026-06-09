@@ -32,8 +32,8 @@ Maker Dashboard.app/
 
 The launcher is required because a double-clicked `.app` runs with the working
 directory set to `/`, which would break the server's default *relative*
-frontend path. The launcher exports absolute `DASHBOARD_FRONTEND_PATH` /
-`DASHBOARD_SPA_INDEX` values pointing inside the bundle.
+frontend path. The launcher exports absolute `MAKER_DASHBOARD_FRONTEND_PATH` /
+`MAKER_DASHBOARD_SPA_INDEX` values pointing inside the bundle.
 
 ## Usage
 
@@ -44,17 +44,17 @@ frontend path. The launcher exports absolute `DASHBOARD_FRONTEND_PATH` /
 ## Changing the port
 
 The default port is `3000`. To change it without rebuilding, edit the launcher
-inside the bundle and uncomment the `DASHBOARD_PORT` line:
+inside the bundle and uncomment the `MAKER_DASHBOARD_PORT` line:
 
 ```sh
 nano "/Applications/Maker Dashboard.app/Contents/MacOS/launcher"
-# uncomment:  export DASHBOARD_PORT=8080
+# uncomment:  export MAKER_DASHBOARD_PORT=8080
 ```
 
 Or launch from Terminal with the env var set:
 
 ```sh
-DASHBOARD_PORT=8080 "/Applications/Maker Dashboard.app/Contents/MacOS/launcher"
+MAKER_DASHBOARD_PORT=8080 "/Applications/Maker Dashboard.app/Contents/MacOS/launcher"
 ```
 
 ## Notes / limitations

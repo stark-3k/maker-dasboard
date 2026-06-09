@@ -20,13 +20,13 @@ RESOURCES="$HERE/../Resources"
 cd "$HOME" || cd /tmp
 
 # Serve the frontend that ships inside the bundle.
-export DASHBOARD_FRONTEND_PATH="$RESOURCES/frontend"
-export DASHBOARD_SPA_INDEX="$RESOURCES/frontend/index.html"
+export MAKER_DASHBOARD_FRONTEND_PATH="$RESOURCES/frontend"
+export MAKER_DASHBOARD_SPA_INDEX="$RESOURCES/frontend/index.html"
 
 # ---------------------------------------------------------------------------
 # To change the port the dashboard listens on, uncomment and edit the line
 # below, then re-open the app. (Default is 3000.)
-# export DASHBOARD_PORT=8080
+# export MAKER_DASHBOARD_PORT=8080
 # ---------------------------------------------------------------------------
 
 exec "$HERE/maker-dashboard"
