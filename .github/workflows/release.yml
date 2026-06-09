@@ -21,9 +21,11 @@ jobs:
       - name: Verify versions match
         run: |
           TAG_VERSION="${GITHUB_REF#refs/tags/v}"
+          # Ignore pre-release suffixes: v0.2.1-rc1 / v0.2.1-demo match 0.2.1
+          BASE_VERSION="${TAG_VERSION%%-*}"
           CARGO_VERSION="$(sed -n 's/^version = "\(.*\)"$/\1/p' Cargo.toml | head -1)"
-          if [ "$TAG_VERSION" != "$CARGO_VERSION" ]; then
-            echo "Tag v${TAG_VERSION} does not match Cargo.toml version ${CARGO_VERSION}" >&2
+          if [ "$BASE_VERSION" != "$CARGO_VERSION" ]; then
+            echo "Tag v${TAG_VERSION} (base ${BASE_VERSION}) does not match Cargo.toml version ${CARGO_VERSION}" >&2
             echo "Bump Cargo.toml before tagging." >&2
             exit 1
           fi
